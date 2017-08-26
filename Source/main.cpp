@@ -7,7 +7,6 @@
 #include "Screens/cScreen.hpp"
 #include "Screens/screen_0.hpp"
 #include "Screens/screen_1.hpp"
-#include "Screens/screen_2.hpp"
 
 int main(int argc, char** argv)
 {
@@ -22,8 +21,6 @@ int main(int argc, char** argv)
 	Screens.push_back(&s0);
 	screen_1 s1;
 	Screens.push_back(&s1);
-	screen_2 s2;
-	Screens.push_back(&s2);
 
 	while (screen >= 0)
 	{
