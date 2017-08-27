@@ -5,6 +5,7 @@
 #include <SFML/Graphics.hpp>
 #include "cScreen.hpp"
 #include "../menu.hpp"
+#include "../score.hpp"
 
 class screen_0 : public cScreen
 {
@@ -31,7 +32,7 @@ screen_0::screen_0(void)
 	font.loadFromFile("Materials/Constantine_Bold.ttf");
 	text.setFont(font);
 	text.setCharacterSize(20);
-	text.setPosition({ 60.0f, 10.0f });
+	text.setPosition({ 60.0f, 60.0f });
 }
 
 int screen_0::Run(sf::RenderWindow &App)
@@ -59,6 +60,9 @@ int screen_0::Run(sf::RenderWindow &App)
 
 	Texture.loadFromFile("Materials/bg_menu.png");
 	Sprite.setTexture(Texture);
+
+	if(last_score != -1)
+		text.setString("Last Score: " + std::to_string(last_score));
 
 	if (playing)
 	{

@@ -30,16 +30,11 @@ public:
 	void setPercentage(float value_)
 	{
 		value = value_;
-		if(!isGameOver())
-			bar.setSize(sf::Vector2f(width * value / 100.0f, height));
+		bar.setSize(sf::Vector2f(width * value / 100.0f, height));
 	}
 	void draw(sf::RenderWindow& App)
 	{
 		App.draw(bar);
-	}
-	bool isGameOver()
-	{
-		return value <= 0;
 	}
 };
 

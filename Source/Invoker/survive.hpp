@@ -21,7 +21,6 @@ public:
 	Survive()
 	{
 		texture.loadFromFile("Materials/sprite_list.png");
-		zeroScore();
 		sprite.setTexture(texture);
 	}
 	std::string generate()
@@ -64,23 +63,9 @@ public:
 	{
 		App.draw(sprite);
 	}
-	void zeroScore()
-	{
-		score = 0;
-	}
 	bool checkForCorrect(std::string const & skill)
 	{
-		if (skill == current_skill)
-		{
-			++score;
-			return 1;
-		}
-		else
-			return 0;
-	}
-	int getScore()
-	{
-		return score;
+		return skill == current_skill;
 	}
 };
 

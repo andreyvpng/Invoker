@@ -9,6 +9,7 @@
 #include "../Invoker/survive.hpp"
 #include "../progressBar.hpp"
 #include "../sugar.hpp"
+#include "../score.hpp"
 
 class screen_1 : public cScreen
 {
@@ -26,7 +27,7 @@ public:
 	float valueOfBar;
 	bool isFirstLaunch;
 	sf::Font font;
-	sf::Text text;
+	sf::Text text;	
 	virtual int Run(sf::RenderWindow &App);
 };
 
@@ -56,7 +57,7 @@ screen_1::screen_1(void)
 	font.loadFromFile("Materials/Constantine_Bold.ttf");
 	text.setFont(font);
 	text.setCharacterSize(20);
-	text.setPosition({ 60.0f, 10.0f });
+	text.setPosition({ 60.0f, 60.0f });
 	
 	survive.generate();
 	isFirstLaunch = true;
@@ -69,24 +70,25 @@ int screen_1::Run(sf::RenderWindow &App)
 	sf::Event Event;
 	sf::Clock clock;
 	bool Running = true;
-	
+
 	if(isFirstLaunch)
 	{
 		valueOfBar = 100;
-		bar.setPercentage(valueOfBar);
-		survive.zeroScore();
+		bar.setPercentage(valueOfBar);			
 	}
-	
+
 	isFirstLaunch = false;
 	
 	while (Running)
 	{
 		float timeOfGame = clock.restart().asMicroseconds();
 		
-		if (bar.isGameOver())
+		if (valueOfBar <= 0)
 		{
+			last_score = score;
+			score = 0;
 			isFirstLaunch = true;
-			return 0;
+			return 2;
 		}
 
 		while (App.pollEvent(Event))
@@ -114,6 +116,7 @@ int screen_1::Run(sf::RenderWindow &App)
 				case sf::Keyboard::R:
 					if (survive.checkForCorrect( skills.cast( spheres.get() ) ))
 					{
+						++score;
 						survive.generate();
 						valueOfBar = 100;
 					}
@@ -124,10 +127,10 @@ int screen_1::Run(sf::RenderWindow &App)
 			}
 		}
 		
-		valueOfBar -= 0.000004 * (survive.getScore() + 1) * timeOfGame;
+		valueOfBar -= 0.000004 * (score + 1) * timeOfGame;
 		bar.setPercentage(valueOfBar);
 		
-		text.setString("Score: " + std::to_string(survive.getScore()));
+		text.setString("Score: " + std::to_string(score));
 
 		App.clear(sf::Color::Black);
 		
