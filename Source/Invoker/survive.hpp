@@ -6,8 +6,9 @@
 #include <cstdlib>		// srand
 #include <ctime>		// time
 #include <SFML/Graphics.hpp>
-#include "../sugar.hpp"
 #include "skills.hpp"
+#include "../sugar.hpp"
+#include "../score.hpp"
 
 class Survive
 {
@@ -64,7 +65,14 @@ public:
 	}
 	bool checkForCorrect(std::string const & skill)
 	{
-		return skill == current_skill;
+		if(skill == current_skill)
+		{
+			++score;
+			generate();
+			return 1;
+		}
+		else
+			return 0;
 	}
 };
 

@@ -81,7 +81,6 @@ int screen_2::Run(sf::RenderWindow &App)
 		App.display();
 	}
 
-	// ����� �� ����������
 	return -1;
 }
 

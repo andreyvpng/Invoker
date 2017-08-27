@@ -114,12 +114,15 @@ int screen_1::Run(sf::RenderWindow &App)
 					spheres.push('e');
 					break;
 				case sf::Keyboard::R:
-					if (survive.checkForCorrect( skills.cast( spheres.get() ) ))
-					{
-						++score;
-						survive.generate();
+					skills.cast(spheres.get());
+					break;
+				case sf::Keyboard::D:
+					if(survive.checkForCorrect( skills.getD() ))
 						valueOfBar = 100;
-					}
+					break;
+				case sf::Keyboard::F:
+					if(survive.checkForCorrect( skills.getF() ))
+						valueOfBar = 100;
 					break;
 				default:
 					break;
@@ -127,7 +130,7 @@ int screen_1::Run(sf::RenderWindow &App)
 			}
 		}
 		
-		valueOfBar -= 0.000004 * (score + 1) * timeOfGame;
+		valueOfBar -= 0.000001 * (score + 1) * timeOfGame;
 		bar.setPercentage(valueOfBar);
 		
 		text.setString("Score: " + std::to_string(score));

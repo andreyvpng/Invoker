@@ -33,6 +33,20 @@ public:
 	{
 		return skills;
 	}
+	std::string getD()
+	{
+		if(skills.size() >= 1)
+			return skills[0];
+		else
+			return "";
+	}
+	std::string getF()
+	{
+		if(skills.size() >= 2)
+			return skills[1];
+		else
+			return "";
+	}
 	std::string cast(std::vector<char> const& spheres)
 	{
 		if (spheres.size() == 3) {
