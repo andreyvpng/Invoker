@@ -1,5 +1,5 @@
-#ifndef _PROGRESS_BAR_
-#define _PROGRESS_BAR_
+#ifndef PROGRESS_BAR
+#define PROGRESS_BAR
 
 #include <SFML/Graphics/RectangleShape.hpp>
 #include <SFML/System/Vector2.hpp>
@@ -38,4 +38,4 @@ public:
 	}
 };
 
-#endif
+#endif // PROGRESS_BAR

@@ -1,5 +1,5 @@
-#ifndef _SCREEN_2_
-#define _SCREEN_2_
+#ifndef SCREEN_2
+#define SCREEN_2
 
 #include <iostream>
 #include <SFML/Graphics.hpp>
@@ -84,4 +84,4 @@ int screen_2::Run(sf::RenderWindow &App)
 	return -1;
 }
 
-#endif
+#endif // SCREEN_2

@@ -1,5 +1,5 @@
-#ifndef _SURVIVE_
-#define _SURVIVE_
+#ifndef SURVIVE_
+#define SURVIVE_
 
 #include <string>
 #include <algorithm>	// sort
@@ -76,4 +76,4 @@ public:
 	}
 };
 
-#endif
+#endif // SURVIVE_

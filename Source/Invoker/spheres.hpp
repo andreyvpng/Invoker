@@ -1,5 +1,5 @@
-#ifndef _SPHERES_
-#define _SPHERES_
+#ifndef SPHERES_
+#define SPHERES_
 
 #include <vector>
 #include <SFML/Graphics.hpp>
@@ -66,4 +66,4 @@ public:
 	}
 };
 
-#endif
+#endif // SPHERES_

@@ -1,5 +1,5 @@
-#ifndef _SUGAR_
-#define _SUGAR_
+#ifndef SUGAR_
+#define SUGAR_
 
 #include <SFMl/Graphics.hpp>
 
@@ -37,4 +37,4 @@ namespace sugar
 	}
 }
 
-#endif
+#endif // SUGAR_

@@ -1,5 +1,5 @@
-#ifndef _SKILLS_
-#define _SKILLS_
+#ifndef SKILLS_
+#define SKILLS_
 
 #include <iostream>
 #include <vector>
@@ -101,4 +101,4 @@ public:
 	}
 };
 
-#endif
+#endif // SKILLS_

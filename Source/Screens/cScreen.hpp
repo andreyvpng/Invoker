@@ -1,5 +1,5 @@
-#ifndef _CSREEN_
-#define _CSREEN_
+#ifndef CSREEN_
+#define CSREEN_
 
 #include <SFML/Graphics.hpp>
 
@@ -9,4 +9,4 @@ public:
 	virtual int Run(sf::RenderWindow &App) = 0;
 };
 
-#endif
+#endif // CSREEN_

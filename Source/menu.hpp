@@ -1,5 +1,5 @@
-#ifndef _MENU_
-#define _MENU_
+#ifndef MENU_
+#define MENU_
 
 #include <SFML/Graphics.hpp>
 #include <vector>
@@ -51,4 +51,4 @@ public:
 	}
 };
 
-#endif
+#endif // MENU_
