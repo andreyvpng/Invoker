@@ -14,7 +14,6 @@ class Survive
 private:
 	std::string last_skill;
 	std::string current_skill;
-	int score;
 	sf::Texture texture;
 public:
 	sf::Sprite sprite;
