@@ -13,6 +13,7 @@ private:
 	bool gameOver;
 public:
 	sf::RectangleShape bar;
+	progressBar() {}
 	void setSize(int width_, int height_)
 	{
 		gameOver = false;

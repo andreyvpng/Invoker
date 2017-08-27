@@ -60,6 +60,7 @@ screen_1::screen_1(void)
 	text.setPosition({ 60.0f, 60.0f });
 	
 	survive.generate();
+	valueOfBar = 100;
 	isFirstLaunch = true;
 }
 
